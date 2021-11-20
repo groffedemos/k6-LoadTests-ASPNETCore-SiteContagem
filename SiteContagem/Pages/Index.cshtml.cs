@@ -19,6 +19,8 @@ public class IndexModel : PageModel
         }
 
         logger.LogValorAtual(valorAtual);
+        
+        if (valorAtual % 4 == 00) throw new Exception("Simulando falha!");
 
         TempData["Contador"] = valorAtual;
         TempData["Local"] = _CONTADOR.Local;
